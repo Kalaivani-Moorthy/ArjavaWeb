@@ -1,9 +1,10 @@
 <script>
+  import { base } from "$app/paths";
   const contactInfo = {
       company: "Arjava Technologies",
-      address: "2135 204th PL NE, Sammamish, WA - 98974, USA.",
-      phone: "+1 5589 55488 55",
-      email: "info@example.com"
+      address: " 19, Ganesh Nagar Main Road, Selaiyur, Chennai - 600073.",
+      phone: "044-35675035",
+      email: "arjavatech@gmail.com"
   };
 
   const usefulLinks = ["Home", "about", "Services", "Terms of service", "Privacy policy"];
@@ -47,10 +48,10 @@
           <h3 class="text-lg font-semibold mb-3 uppercase ">Useful Links<br ><a class="text-green-400">___________</a></h3>
       
           <ul class="space-y-2">
-            <li><a href="/" class="hover:text-blue-400">Home</a></li>
-            <li><a href="/about" class="hover:text-blue-400">AboutUs</a></li>
-            <li><a href="/Services" class="hover:text-blue-400">Services</a></li>
-            <li><a href="/Products" class="hover:text-blue-400">Products</a></li>
+            <li><a href="{base}/" class="hover:text-blue-400">Home</a></li>
+            <li><a href="{base}/about" class="hover:text-blue-400">AboutUs</a></li>
+            <li><a href="{base}/Services" class="hover:text-blue-400">Services</a></li>
+            <li><a href="{base}/Products" class="hover:text-blue-400">Products</a></li>
            
             <li><a href="/" class="hover:text-blue-400">Terms of service</a></li>
             

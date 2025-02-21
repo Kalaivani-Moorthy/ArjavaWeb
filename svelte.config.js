@@ -1,17 +1,24 @@
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import adapter from '@sveltejs/adapter-static';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
-export default {
-  kit: {
-    adapter: adapter({
-      pages: 'build',
-      assets: 'build',
-      fallback: '200.html', // For SPA routing
-      precompress: false,
-    }),
-    paths: {
-      base: process.env.NODE_ENV === 'production' ? '/ArjavaWeb' : '', // Adjust to your repo name
-    },
-  },
-  preprocess: vitePreprocess(),
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+    preprocess: vitePreprocess(),
+    kit: {
+        adapter: adapter({
+            pages: 'build',
+            assets: 'build',
+            fallback: 'index.html' // Ensures SPA routing works
+        }),
+        paths: {
+            base: "/ArjavaWeb" // IMPORTANT: Set this to your GitHub repo name
+        },
+        appDir: "internal",
+        prerender: {
+            entries: ['*']
+        },
+		
+    }
 };
+
+export default config;

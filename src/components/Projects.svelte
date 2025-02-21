@@ -2,6 +2,7 @@
 
      import { onMount } from "svelte";
      import { goto } from "$app/navigation";
+  import { base } from "$app/paths";
    
 
 
@@ -68,13 +69,17 @@ let projects = [
                 <div class="portfolio-info card-overlay">
                   <h4 class="uppercase">{item.title}</h4>
                   <p>{item.description}</p>
-                  <button 
-                  on:click={() => window.location.href = `/Details/${item.id}`}
+                  <!-- <button 
+                  on:click={() => window.location.href = `${base}/Details/${item.id}`}
                   class="inline-flex items-center  text-white bg-green-500 hover:bg-green-600 px-3 py-1 rounded-md transition mt-4"
                 >
                  ReadMore
                   <i class="bi bi-arrow-right ml-2 "></i>
-                </button>
+                </button> -->
+
+
+                <a href="{base}/Details/{item.id}" class="inline-flex items-center  text-white bg-green-500 hover:bg-green-600 px-3 py-1 rounded-md transition mt-4"> ReadMore
+                  <i class="bi bi-arrow-right ml-2 "></i></a>
                 </div>
               </div>
              
